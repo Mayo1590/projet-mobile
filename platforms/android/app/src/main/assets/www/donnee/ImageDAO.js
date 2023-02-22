@@ -1,7 +1,7 @@
 class ImageDAO{
     ajouter(image){
         console.log(image.image)
-        fetch("https://mayal.systems/ajouter-image.php", {
+        fetch("https://spot.mayalennox.com/ajouter-image.php", {
             method: "POST",
             body: image.image
         }).then((reponse) =>{

@@ -11,7 +11,7 @@ class EndroitDAO {
         if(!requette){
             return null;
         }
-        requette.open('GET', "https://mayal.systems/lister-endroit.php", true);
+        requette.open('GET', "https://spot.mayalennox.com/lister-endroit.php", true);
         requette.send();
         requette.onreadystatechange = () => {
             if(requette.readyState == 4 && requette.status == 200){
@@ -38,7 +38,7 @@ class EndroitDAO {
         if(!requette){
             return null;
         }
-        requette.open('GET', "https://mayal.systems/lister-detail-endroit.php?id=" + id, true);
+        requette.open('GET', "https://spot.mayalennox.com/lister-detail-endroit.php?id=" + id, true);
         requette.send();
         requette.onreadystatechange = () => {
             if(requette.readyState == 4 && requette.status == 200){
@@ -79,7 +79,7 @@ class EndroitDAO {
             }
         }
 
-        requette.open('POST', "https://mayal.systems/ajouter-endroit.php");
+        requette.open('POST', "https://spot.mayalennox.com/ajouter-endroit.php");
         requette.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         requette.send(`titre=${encodeURIComponent(endroit.titre)}&description=${encodeURIComponent(endroit.description)}`)
     }
