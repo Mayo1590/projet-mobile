@@ -17,17 +17,6 @@
         }
     });
 
-    /* slicknav mobile menu active  */
-    $('.mobile-menu').slicknav({
-      prependTo: '.navbar-header',
-      parentTag: 'liner',
-      allowParentLinks: true,
-      duplicate: true,
-      label: '',
-      closedSymbol: '<i class="icon-arrow-right"></i>',
-      openedSymbol: '<i class="icon-arrow-down"></i>',
-    });
-
     /* ==========================================================================
     countdown timer
     ========================================================================== */
@@ -46,11 +35,6 @@
         mobile: false
     });
     wow.init();
-
-    // one page navigation 
-    $('.onepage-nev').onePageNav({
-            currentClass: 'active'
-    }); 
 
     /* Back Top Link active
     ========================================================*/

@@ -15,11 +15,11 @@ class EndroitDAO {
         requette.send();
         requette.onreadystatechange = () => {
             if(requette.readyState == 4 && requette.status == 200){
-                //console.log(requette.responseText);
+                console.log(requette.responseText);
                 let liste = JSON.parse(requette.responseText);
-                //console.log(liste);
+                console.log(liste);
                 for(let i in liste){
-                    //console.log(liste[i]);
+                    console.log(liste[i]);
                     console.log(this.listeEndroit);
                     this.listeEndroit[i] = liste[i];
 
