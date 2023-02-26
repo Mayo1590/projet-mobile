@@ -1,5 +1,6 @@
 class VueListeEndroit{
     constructor(){
+        console.log('iciejr');
         document.getElementById("ajouter-endroit").addEventListener("click", evenement => this.redirigerMembre(evenement));
         this.listeEndroitDonnee = null;
     }
@@ -38,9 +39,11 @@ class VueListeEndroit{
     }
 
     redirigerMembre(evenement) {
+        console.log('rediriger');
         evenement.preventDefault();
         var url = window.location.href.toString();
 
+        console.log(window.localStorage.getItem('connecter'))
         if(window.localStorage.getItem('connecter') && localStorage.getItem('connecter') == 'true')
             window.location.href = url.replace('index.html', 'ajouter-endroit.html');
         else

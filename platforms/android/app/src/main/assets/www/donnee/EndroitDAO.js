@@ -81,6 +81,6 @@ class EndroitDAO {
 
         requette.open('POST', "https://spot.mayalennox.com/ajouter-endroit.php");
         requette.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        requette.send(`titre=${encodeURIComponent(endroit.titre)}&description=${encodeURIComponent(endroit.description)}`)
+        requette.send(`titre=${encodeURIComponent(endroit.titre)}&description=${encodeURIComponent(endroit.description)}&image=${endroit.image}`)
     }
 }

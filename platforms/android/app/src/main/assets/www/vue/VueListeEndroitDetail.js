@@ -25,12 +25,7 @@ class VueListeEndroitDetail{
 
             html += '<h1>' + titre + '</h1>';
             html += '<p class="mt-2 mb-5">' + description + '</p>';
-            html += '<div id="rotate-container">';
-                html += '<div id="rotatable">';
-                    html += '<img class="img-fluid" src="' + image +'"/>';
-                html += '</div>';
-            html += '</div>';
-            html += '<div id="interaction"></div>';
+            html += '<img class="img-fluid" src="' + image + '" alt=""/>';
         }
     
         document.getElementById("endroit").innerHTML = html;

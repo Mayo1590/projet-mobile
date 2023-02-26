@@ -15,7 +15,16 @@ class VueAjouterEndroit{
         let titre = document.getElementById("titre").value;
         let description = document.getElementById("description").value;
 
-        this.actionAjouterEndroit(new Endroit(titre, description, null));
+        let images = document.querySelector('[type=file]').files;
+        let data = new FormData();
+
+        for (let i = 0; i < images.length; i++) {
+            let image = images[i];
+
+            data.append('files[]', image);
+        }
+
+        this.actionAjouterEndroit(new Endroit(titre, description, data, null));
     }
 
 }
