@@ -1,19 +1,15 @@
 class VueListeEndroit{
     constructor(){
-        console.log('iciejr');
         document.getElementById("ajouter-endroit").addEventListener("click", evenement => this.redirigerMembre(evenement));
         this.listeEndroitDonnee = null;
     }
 
     initialiserListeEndroit(listeEndroitDonnee) {
         this.listeEndroitDonnee = listeEndroitDonnee;
-        console.log('initialisation' + listeEndroitDonnee);
     }
 
     afficher(listeEndroitDonnee) {
         this.listeEndroitDonnee = listeEndroitDonnee;
-
-        console.log("VueListeEndroit " + this.listeEndroitDonnee);
 
         let html = "";
 
@@ -22,8 +18,6 @@ class VueListeEndroit{
             let id = this.listeEndroitDonnee[numeroEndroit].id;
             let titre = this.listeEndroitDonnee[numeroEndroit].titre;
             let image = this.listeEndroitDonnee[numeroEndroit].image;
-
-            console.log('titre endroit de VueListeEndroit : ' + titre);
 
             html += '<a href="liste-details.html?' + id + '" style="text-decoration:none">'; 
                 html += '<div class="card bg-dark my-1">';
@@ -39,12 +33,10 @@ class VueListeEndroit{
     }
 
     redirigerMembre(evenement) {
-        console.log('rediriger');
         evenement.preventDefault();
         var url = window.location.href.toString();
 
-        console.log(window.localStorage.getItem('connecter'))
-        if(window.localStorage.getItem('connecter') && localStorage.getItem('connecter') == 'true')
+        if(localStorage.getItem('connecter') && localStorage.getItem('connecter') == 'true')
             window.location.href = url.replace('index.html', 'ajouter-endroit.html');
         else
             window.location.href = url.replace('index.html', 'connexion-membre.html');

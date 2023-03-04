@@ -21,7 +21,6 @@ class MembreDAO {
             }
         }
 
-        console.log("ajouter");
         requette.open('POST', "https://spot.mayalennox.com/ajouter-membre.php");
         requette.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         requette.send(`pseudo=${encodeURIComponent(membre.pseudo)}&mdp=${encodeURIComponent(membre.mdp)}&courriel=${encodeURIComponent(membre.courriel)}&nom=${encodeURIComponent(membre.nom)}`)
@@ -48,8 +47,6 @@ class MembreDAO {
                     }
                     else 
                         localStorage.setItem('connecter', 'false');
-
-                    console.log(localStorage.getItem('connecter'));
                 }
                 else {
                     alert(requette.responseText);

@@ -15,15 +15,9 @@ class EndroitDAO {
         requette.send();
         requette.onreadystatechange = () => {
             if(requette.readyState == 4 && requette.status == 200){
-                console.log(requette.responseText);
                 let liste = JSON.parse(requette.responseText);
-                console.log(liste);
                 for(let i in liste){
-                    console.log(liste[i]);
-                    console.log(this.listeEndroit);
                     this.listeEndroit[i] = liste[i];
-
-                    console.log('titre endroit de EndroitDAO : ' + this.listeEndroit[i].titre);
                 }
 
                 this.vueListeEndroit = new VueListeEndroit();
@@ -46,11 +40,7 @@ class EndroitDAO {
                 let liste = JSON.parse(requette.responseText);
 
                 for(let i in liste){
-
-                    console.log(this.listeEndroitDetail);
                     this.listeEndroitDetail[i] = liste[i];
-
-                    console.log('titre endroit de EndroitDAO : ' + this.listeEndroitDetail[i].titre);
                 }
 
                 this.vueListeEndroitDetail.afficher(this.listeEndroitDetail);
@@ -69,8 +59,7 @@ class EndroitDAO {
 
             if (requette.readyState === XMLHttpRequest.DONE) {
                 if(requette.status === 200){
-                    console.log(requette.responseText);
-                    //window.location.href = url.replace('ajouter-endroit.html', 'index.html');
+                    window.location.href = url.replace('ajouter-endroit.html', 'index.html');
                 }
                 else {
                     alert(requette.responseText);
@@ -78,7 +67,6 @@ class EndroitDAO {
                 }
             }
         }
-        console.log(endroit.image[0]);
 
         var data = new FormData();
         data.append('titre', endroit.titre);
@@ -86,9 +74,5 @@ class EndroitDAO {
         data.append('images', endroit.image[0]);
         requette.open('POST', "https://spot.mayalennox.com/ajouter-endroit.php");
         requette.send(data);
-
-        //requette.open('POST', "https://spot.mayalennox.com/ajouter-endroit.php");
-        //requette.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        //requette.send(`titre=${encodeURIComponent(endroit.titre)}&description=${encodeURIComponent(endroit.description)}&image=${endroit.image}`)
     }
 }

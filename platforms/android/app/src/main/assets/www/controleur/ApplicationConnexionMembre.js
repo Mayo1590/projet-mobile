@@ -8,7 +8,6 @@ class Application {
     }
 
     actionConnexionMembre(membre){
-        console.log("ici!!");
         this.membreDAO.connecter(membre);
     }
 }

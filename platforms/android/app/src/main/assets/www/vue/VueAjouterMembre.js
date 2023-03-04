@@ -16,8 +16,6 @@ class VueAjouterMembre{
         let courriel = document.getElementById("courriel").value;
         let nom = document.getElementById("nom").value;
 
-        console.log("VueAjoutMembre" + nom);
-
         this.actionAjouterMembre(new Membre(pseudo, mdp, courriel, nom, null));
     }
 

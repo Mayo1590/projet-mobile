@@ -1,6 +1,5 @@
 class Application {
     constructor(window, endroitDAO, vueListeEndroitDetail) {
-        console.log("Application");
 
         this.window = window;
         this.endroitDAO = endroitDAO;
@@ -16,7 +15,6 @@ class Application {
         };
 
         this.vueListeDetailEndroit = vueListeEndroitDetail;
-        console.log(window.location.href);
         this.endroitDAO.listerDetail(findId(window.location.href));
     }
 
