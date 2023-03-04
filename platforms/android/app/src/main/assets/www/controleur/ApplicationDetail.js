@@ -1,10 +1,9 @@
 class Application {
-    constructor(window, endroitDAO, imageDAO, vueListeEndroitDetail) {
+    constructor(window, endroitDAO, vueListeEndroitDetail) {
         console.log("Application");
 
         this.window = window;
         this.endroitDAO = endroitDAO;
-        this.imageDAO = imageDAO;
 
         const expression = /^.*\/liste-details.html\?(\d+)/i
 
@@ -23,4 +22,4 @@ class Application {
 
 }
 
-new Application(window, new EndroitDAO(), new ImageDAO(), new VueListeEndroitDetail());
+new Application(window, new EndroitDAO(), new VueListeEndroitDetail());

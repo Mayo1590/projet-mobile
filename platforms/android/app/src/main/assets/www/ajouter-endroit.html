@@ -16,12 +16,9 @@
     <!--<script src="cordova.js"></script>-->
     <script src="modele/Endroit.js"></script>
     <script src="donnee/EndroitDAO.js"></script>
-    <script src="modele/Images.js"></script>
-    <script src="donnee/ImageDAO.js"></script>
     <script src="vue/VueListeEndroit.js"></script>
 	  <script src="vue/VueListeEndroitDetail.js"></script>
     <script src="vue/VueAjouterEndroit.js"></script>
-	  <script src="vue/VueAjouterImage.js"></script>
     <script defer src="controleur/ApplicationAjout.js"></script>
   </head>
   <body class="bg-dark">
@@ -54,7 +51,7 @@
 
               <div class="mb-3">
                   <label for="formFile" class="form-label">Choisir une image ci-dessous :</label>
-                  <input class="form-control" type="file" name="images[]" multiple id="image" accept="image/*">
+                  <input class="form-control" type="file" name="images" multiple id="image" accept="image/*">
               </div>
 
               <div class="button-group">

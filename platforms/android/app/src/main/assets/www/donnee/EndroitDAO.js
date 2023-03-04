@@ -69,8 +69,8 @@ class EndroitDAO {
 
             if (requette.readyState === XMLHttpRequest.DONE) {
                 if(requette.status === 200){
-                    //alert(requette.responseText);
-                    window.location.href = url.replace('ajouter-endroit.html', 'valider-endroit.html');
+                    console.log(requette.responseText);
+                    //window.location.href = url.replace('ajouter-endroit.html', 'index.html');
                 }
                 else {
                     alert(requette.responseText);
@@ -78,9 +78,17 @@ class EndroitDAO {
                 }
             }
         }
+        console.log(endroit.image[0]);
 
+        var data = new FormData();
+        data.append('titre', endroit.titre);
+        data.append('description', endroit.description);
+        data.append('images', endroit.image[0]);
         requette.open('POST', "https://spot.mayalennox.com/ajouter-endroit.php");
-        requette.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        requette.send(`titre=${encodeURIComponent(endroit.titre)}&description=${encodeURIComponent(endroit.description)}&image=${endroit.image}`)
+        requette.send(data);
+
+        //requette.open('POST', "https://spot.mayalennox.com/ajouter-endroit.php");
+        //requette.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        //requette.send(`titre=${encodeURIComponent(endroit.titre)}&description=${encodeURIComponent(endroit.description)}&image=${endroit.image}`)
     }
 }
