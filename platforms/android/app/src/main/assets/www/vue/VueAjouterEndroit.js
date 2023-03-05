@@ -13,10 +13,11 @@ class VueAjouterEndroit{
 
         let titre = document.getElementById("titre").value;
         let description = document.getElementById("description").value;
+        let ville = document.getElementById("ville").value;
 
         let images = document.querySelector('[type=file]').files;
 
-        this.actionAjouterEndroit(new Endroit(titre, description, images, null));
+        this.actionAjouterEndroit(new Endroit(titre, description, images, ville, null));
     }
 
 }
