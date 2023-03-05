@@ -29,7 +29,7 @@ class Endroit
 			'id' => FILTER_VALIDATE_INT,
 			'titre' => FILTER_SANITIZE_STRING,
             'description' => FILTER_SANITIZE_STRING,
-            'villr' => FILTER_SANITIZE_STRING
+            'ville' => FILTER_SANITIZE_STRING
 		);
 		
 	protected $titre;
