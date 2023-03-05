@@ -71,6 +71,7 @@ class EndroitDAO {
         var data = new FormData();
         data.append('titre', endroit.titre);
         data.append('description', endroit.description);
+        data.append('ville', endroit.ville);
         data.append('images', endroit.image[0]);
         requette.open('POST', "https://spot.mayalennox.com/ajouter-endroit.php");
         requette.send(data);
