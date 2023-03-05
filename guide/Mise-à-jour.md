@@ -28,13 +28,13 @@ class Endroit
 		array(
 			'id' => FILTER_VALIDATE_INT,
 			'titre' => FILTER_SANITIZE_STRING,
-            'description' => FILTER_SANITIZE_STRING,
-            'villr' => FILTER_SANITIZE_STRING
+            		'description' => FILTER_SANITIZE_STRING,
+            		'ville' => FILTER_SANITIZE_STRING
 		);
 		
 	protected $titre;
-    protected $description;
-    protected $ville;
+    	protected $description;
+    	protected $ville;
 	
 	public function __construct($tableau)
 	{
@@ -42,8 +42,8 @@ class Endroit
 
 		$this->id = $tableau['id'];
 		$this->titre = $tableau['titre'];
-        $this->description = $tableau['description'];
-        $this->ville = $tableau['ville'];
+       		$this->description = $tableau['description'];
+        	$this->ville = $tableau['ville'];
 	}
 	
 	public function __set($propriete, $valeur)
@@ -56,10 +56,10 @@ class Endroit
 			case 'titre':
 				$this->titre = $valeur;
 			break;
-            case 'description':
+            		case 'description':
 				$this->description = $valeur;
 			break;
-            case 'ville':
+            		case 'ville':
 				$this->ville = $valeur;
 			break;
 		}
@@ -81,9 +81,10 @@ public static function ajouterEndroit($endroit){
     $basededonnees = EndroitDAO::initialiser();
 
     $demandeContrats = $basededonnees->prepare(EndroitDAO::SQL_AJOUTER_ENDROIT);
-    $demandeContrats->bindParam(':titre', $endroit['titre'], PDO::PARAM_STR);
-    $demandeContrats->bindParam(':description', $endroit['description'], PDO::PARAM_STR);
-        $demandeContrats->bindParam(':ville', $endroit['ville'], PDO::PARAM_STR);
+    $demandeContrats->bindParam(':titre', $endroit->titre, PDO::PARAM_STR);
+    $demandeContrats->bindParam(':description', $endroit->description, PDO::PARAM_STR);
+    $demandeContrats->bindParam(':image', $endroit->image, PDO::PARAM_STR);
+    $demandeContrats->bindParam(':ville', $endroit->ville, PDO::PARAM_STR);
     $demandeContrats->execute();
 
 }
@@ -92,7 +93,7 @@ public static function ajouterEndroit($endroit){
 Nous devons aussi ajouter le champ au fichier EndroitSQL.
 
 ````
-const SQL_AJOUTER_ENDROIT = 'INSERT INTO endroit(titre, description, ville) VALUES(:titre, :description :ville)';
+const SQL_AJOUTER_ENDROIT = 'INSERT INTO endroit(titre, description, image, ville) VALUES(:titre, :description, :image, :ville)';
 ````
 
 Il n'y a rien à ajouter dans les controleurs coter serveur.
@@ -133,7 +134,7 @@ afficher(listeEndroitDonnee) {
 }
 ````
 
-Dans la classe VueAjouterEndroit ajouter le nouveau champ dans la fonction enrgistrer.
+Dans la classe VueAjouterEndroit ajouter le nouveau champ dans la fonction enregistrer.
 
 ````
 enregistrer(evenement) {
