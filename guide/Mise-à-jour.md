@@ -134,7 +134,7 @@ afficher(listeEndroitDonnee) {
 }
 ````
 
-Dans la classe VueAjouterEndroit ajouter le nouveau champ dans la fonction enrgistrer.
+Dans la classe VueAjouterEndroit ajouter le nouveau champ dans la fonction enregistrer.
 
 ````
 enregistrer(evenement) {
